@@ -1,7 +1,8 @@
-package com.cua.todolist
+package com.cua.todolist.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.cua.todolist.R
 
 class MainActivity : AppCompatActivity() {
 
