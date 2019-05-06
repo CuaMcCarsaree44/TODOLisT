@@ -79,22 +79,5 @@
     </com.google.android.material.tabs.TabLayout>
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabHome"
-            app:fabSize="normal"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="60dp"
-            android:layout_marginRight="40dp"
-
-
-            android:src="@drawable/ic_add_white_24dp"
-            android:background="@color/colorAccent"
-
-    />
-
-
 </RelativeLayout>
 </layout>
