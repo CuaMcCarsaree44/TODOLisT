@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+            tools:context=".view.SplashScreenActivity"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.SplashScreenActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+    >
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/splashimage"
+
+            android:src="@drawable/logo"
+            android:contentDescription="@string/image_description"
+    />
+    </LinearLayout>
+        <TextView
+                android:id="@+id/title_splash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+
+                android:fontFamily="@font/roboto_light"
+                android:textSize="26pt"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="470dp"
+        />
+</RelativeLayout>
+</layout>
