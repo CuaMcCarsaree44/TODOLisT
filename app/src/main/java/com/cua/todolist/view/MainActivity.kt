@@ -3,41 +3,72 @@ package com.cua.todolist.view
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.TableLayout
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.ViewPager
 import com.cua.todolist.R
+import com.cua.todolist.adapter.fragmentadapter.MainActivityAdapter
 import com.cua.todolist.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
+    private lateinit var push_left:Animation
+    private lateinit var adapter:MainActivityAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
     }
 
-    fun init(){
+    private fun init(){
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        push_left = AnimationUtils.loadAnimation(this, R.anim.push_left)
         binding.apply{
+            mainTabLayout.animation = push_left
+        }
+
+
+        push_left.setAnimationListener(object: Animation.AnimationListener{
+            override fun onAnimationRepeat(animation: Animation?) {
+
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                setTabLayout()
+            }
+
+            override fun onAnimationStart(animation: Animation?) {
+
+            }
+
+        })
+    }
+
+    private fun setTabLayout(){
+        binding.apply {
+            mainTabLayout.setTabTextColors(resources.getColor(R.color.tabIgnored),
+                                            resources.getColor(R.color.tabSelected))
             mainTabLayout.addTab(mainTabLayout.newTab().setText("TODO List"))
             mainTabLayout.addTab(mainTabLayout.newTab().setText("Reminder"))
-            mainTabLayout.addTab(mainTabLayout.newTab().setText("Exe"))
+            mainTabLayout.addTab(mainTabLayout.newTab().setText("Settings"))
+
+            adapter = MainActivityAdapter(supportFragmentManager, mainTabLayout.tabCount)
+            menuViewPager.adapter = adapter
 
             menuViewPager.addOnPageChangeListener(TabLayoutOnPageChangeListener(mainTabLayout))
             mainTabLayout.addOnTabSelectedListener(object: OnTabSelectedListener{
                 override fun onTabReselected(p0: Tab?) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    menuViewPager.currentItem = p0!!.position
                 }
 
-                override fun onTabUnselected(p0: Tab?) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                }
+                override fun onTabUnselected(p0: Tab?) {}
 
                 override fun onTabSelected(p0: Tab?) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    menuViewPager.currentItem = p0!!.position
                 }
 
             })
