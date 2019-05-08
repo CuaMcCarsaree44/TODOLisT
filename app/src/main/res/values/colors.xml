@@ -3,10 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorBackground">#e5e5e5</color>
+    <color name="colorBackground">#E5E5E5</color>
     <color name="colorText">#FFFFFF</color>
     <color name="tabIgnored">#FFFFFF</color>
-    <color name="tabSelected">#e5e5e5</color>
+    <color name="tabSelected">#505050</color>
 
 
     <!--This Section is For Tile Colors-->
@@ -19,4 +19,5 @@
     <color name="color7">#870065</color><!--Purple-->
     <color name="color8">#870024</color><!--Blood Red-->
     <color name="color9">#008782</color><!--Dark Aqua-->
+    <color name="color0">#505050</color><!--Fluent Design-->
 </resources>
