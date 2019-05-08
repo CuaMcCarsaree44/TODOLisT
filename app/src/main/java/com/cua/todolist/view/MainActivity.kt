@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.ViewPager
 import com.cua.todolist.R
 import com.cua.todolist.adapter.fragmentadapter.MainActivityAdapter
+import com.cua.todolist.adapter.recyclerviewadapter.TodoAdapter
 import com.cua.todolist.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.*
@@ -27,34 +28,18 @@ class MainActivity : AppCompatActivity() {
     private fun init(){
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         push_left = AnimationUtils.loadAnimation(this, R.anim.push_left)
-        binding.apply{
-            mainTabLayout.animation = push_left
-        }
-
-
-        push_left.setAnimationListener(object: Animation.AnimationListener{
-            override fun onAnimationRepeat(animation: Animation?) {
-
-            }
-
-            override fun onAnimationEnd(animation: Animation?) {
-                setTabLayout()
-            }
-
-            override fun onAnimationStart(animation: Animation?) {
-
-            }
-
-        })
+        setTabLayout()
     }
 
     private fun setTabLayout(){
         binding.apply {
-            mainTabLayout.setTabTextColors(resources.getColor(R.color.tabIgnored),
+            mainTabLayout.setTabTextColors(resources.getColor(R.color.tabIgnored) ,
                                             resources.getColor(R.color.tabSelected))
+
             mainTabLayout.addTab(mainTabLayout.newTab().setText("TODO List"))
             mainTabLayout.addTab(mainTabLayout.newTab().setText("Reminder"))
             mainTabLayout.addTab(mainTabLayout.newTab().setText("Settings"))
+            mainTabLayout.animation = push_left
 
             adapter = MainActivityAdapter(supportFragmentManager, mainTabLayout.tabCount)
             menuViewPager.adapter = adapter
