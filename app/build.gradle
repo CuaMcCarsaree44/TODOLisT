@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -48,4 +50,11 @@ dependencies {
 
     //ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+
+    //ROOM Components
+    implementation 'androidx.room:room-runtime:2.1.0-beta01'
+    kapt 'androidx.room:room-compiler:2.1.0-beta01'
+
+    //RxJava Support
+    implementation 'androidx.room:room-rxjava2:2.1.0-beta01'
 }
