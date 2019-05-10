@@ -1,7 +1,5 @@
 package com.cua.todolist.view.fragments
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,18 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 import com.cua.todolist.R
 import com.cua.todolist.adapter.recyclerviewadapter.TodoAdapter
 import com.cua.todolist.databinding.FragmentTodoBinding
 import com.cua.todolist.repository.Storage
-import com.cua.todolist.view.NewNote
-import kotlinx.android.synthetic.main.fragment_todo.*
+import com.cua.todolist.view.TextEditorActivity
 
 class TodoFragment : Fragment(), View.OnClickListener{
     private lateinit var binding:FragmentTodoBinding
@@ -64,7 +58,7 @@ class TodoFragment : Fragment(), View.OnClickListener{
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.fabHome -> {
-                val intent = Intent(activity, NewNote::class.java)
+                val intent = Intent(activity, TextEditorActivity::class.java)
                 startActivity(intent)
             }
         }

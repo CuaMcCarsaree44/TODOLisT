@@ -14,7 +14,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppNoActionBar"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".view.NewNote">
+        <activity android:name=".view.TextEditorActivity">
         </activity>
         <activity android:name=".view.MainActivity">
         </activity>

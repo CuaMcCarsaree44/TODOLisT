@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.TextEditorActivity"
+        android:background="@color/color9"
+        android:id="@+id/newnoteactivity"
+>
+
+    <EditText
+            android:id="@+id/titletextbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+
+            android:textColor="#FFFFFF"
+            android:textColorHint="#CCCCCC"
+            android:hint="Put Your Title Here"
+            android:fontFamily="@font/roboto_light"
+            android:textSize="28sp"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:scrollHorizontally="true"
+            android:background="@color/color9"
+    />
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#FFFFFF"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="60dp"
+    />
+
+    <EditText
+            android:id="@+id/contenttextbox"
+            android:layout_width="match_parent"
+            android:layout_height="620dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:background="@color/color9"
+            android:fontFamily="@font/roboto_light"
+            android:textSize="22sp"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#FFFFFF"
+            android:hint="This is where you put your content"
+            android:textAlignment="textStart"
+            android:gravity="start"
+    />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/texteditornavbar"
+
+            app:menu="@menu/bottom_nav_menu"
+            app:itemBackground="@drawable/background_stroke"
+            app:itemIconTint="@color/colorBackground"
+            app:itemTextColor="#FFFFFF"
+    />
+</RelativeLayout>
+</layout>
