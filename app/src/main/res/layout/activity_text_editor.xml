@@ -3,6 +3,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
 >
+    <data>
+        <variable name="viewmodels" type="com.cua.todolist.viewmodel.activityvm.TextEditorViewModel" />
+    </data>
 <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,6 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:text="@{viewmodels.titleDraft}"
 
             android:textColor="#FFFFFF"
             android:textColorHint="#CCCCCC"
@@ -50,6 +54,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
 
+            android:text="@{viewmodels.contentDraft}"
             android:background="@color/color9"
             android:fontFamily="@font/roboto_light"
             android:textSize="22sp"
